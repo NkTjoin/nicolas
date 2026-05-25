@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nicolas | Future System Engineer</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(59,130,246,0.25), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(14,165,233,0.18), transparent 35%),
+        #020617;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .hero {
+      width: 100%;
+      max-width: 1000px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.82);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      border-radius: 28px;
+      padding: 45px;
+      box-shadow: 0 0 50px rgba(59, 130, 246, 0.25);
+      backdrop-filter: blur(12px);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(59,130,246,0.12);
+      color: #60a5fa;
+      border: 1px solid rgba(96,165,250,0.35);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 58px;
+      margin: 0 0 12px;
+      line-height: 1;
+    }
+
+    h2 {
+      color: #60a5fa;
+      margin: 0 0 22px;
+      font-weight: normal;
+    }
+
+    p {
+      color: #cbd5e1;
+      line-height: 1.8;
+      font-size: 17px;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      color: white;
+      padding: 13px 18px;
+      border-radius: 14px;
+      background: #2563eb;
+      border: 1px solid rgba(255,255,255,0.12);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(37,99,235,0.35);
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: #93c5fd;
+      border: 1px solid rgba(147,197,253,0.35);
+    }
+
+    .terminal {
+      background: #020617;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      box-shadow: 0 0 40px rgba(0,0,0,0.35);
+    }
+
+    .terminal-top {
+      background: #0f172a;
+      padding: 14px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ef4444;
+    }
+
+    .dot:nth-child(2) {
+      background: #f59e0b;
+    }
+
+    .dot:nth-child(3) {
+      background: #22c55e;
+    }
+
+    .terminal-body {
+      padding: 24px;
+      font-family: Consolas, monospace;
+      color: #86efac;
+      min-height: 250px;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .comment {
+      color: #64748b;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 70px 20px;
+    }
+
+    .section-title {
+      font-size: 34px;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .mini-card {
+      background: rgba(15,23,42,0.75);
+      border: 1px solid rgba(148,163,184,0.18);
+      border-radius: 22px;
+      padding: 25px;
+      transition: 0.2s;
+    }
+
+    .mini-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(96,165,250,0.45);
+    }
+
+    .mini-card h3 {
+      margin-top: 0;
+      color: #93c5fd;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      background: rgba(30,41,59,0.9);
+      color: #7dd3fc;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 14px;
+      border: 1px solid rgba(125,211,252,0.18);
+    }
+
+    footer {
+      text-align: center;
+      color: #64748b;
+      padding: 35px 20px;
+      border-top: 1px solid rgba(148,163,184,0.12);
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="hero">
+      <div class="card">
+        <span class="badge">Linux • Cloud • Infrastructure</span>
+        <h1>Nicolas 🚀</h1>
+        <h2>Future System Engineer</h2>
+
+        <p>
+          Estoy aprendiendo Linux, redes, servidores, Docker, Cloudflare e infraestructura.
+          Mi objetivo es entender cómo funcionan los sistemas por detrás y construir proyectos reales.
+        </p>
+
+        <div class="buttons">
+          <a href="#proyectos" class="btn">Ver proyectos</a>
+          <a href="#camino" class="btn secondary">Mi camino</a>
+        </div>
+      </div>
+
+      <div class="terminal">
+        <div class="terminal-top">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+
+        <div class="terminal-body">
+          <div><span class="comment"># iniciando camino sysadmin</span></div>
+          <div>nico@linux:~$ cd proyectos</div>
+          <div>nico@linux:~/proyectos$ mkdir futuro</div>
+          <div>nico@linux:~/proyectos$ docker compose up</div>
+          <div><span class="comment"># services online...</span></div>
+          <div>status: learning 🚀</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="camino">
+    <h2 class="section-title">Lo que estoy aprendiendo</h2>
+
+    <div class="grid">
+      <div class="mini-card">
+        <h3>Linux</h3>
+        <p>Terminal, archivos, permisos, procesos y administración básica del sistema.</p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Redes</h3>
+        <p>DNS, IPs, puertos, dominios, Cloudflare y cómo se conecta internet.</p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Infraestructura</h3>
+        <p>VPS, servidores, Nginx, Docker y servicios funcionando online.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="proyectos">
+    <h2 class="section-title">Proyectos futuros</h2>
+
+    <div class="grid">
+      <div class="mini-card">
+        <h3>Web personal</h3>
+        <p>Mi primera página hecha desde Linux, con estilo tech y presentación personal.</p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Servidor propio</h3>
+        <p>Aprender a levantar servicios reales en una VPS usando SSH y Linux.</p>
+      </div>
+
+      <div class="mini-card">
+        <h3>Docker Lab</h3>
+        <p>Crear un laboratorio con contenedores para web, bases de datos y APIs.</p>
+      </div>
+    </div>
+
+    <div class="tags">
+      <span class="tag">Linux</span>
+      <span class="tag">Docker</span>
+      <span class="tag">Cloudflare</span>
+      <span class="tag">VPS</span>
+      <span class="tag">Networking</span>
+      <span class="tag">Sysadmin</span>
+      <span class="tag">DevOps</span>
+    </div>
+  </section>
+
+  <footer>
+    Hecho desde Linux por Nicolas • Future System Engineer
+  </footer>
+
+</body>
+</html>
