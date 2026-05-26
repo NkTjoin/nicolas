@@ -3,106 +3,265 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>NicoDev | En construcción</title>
 
   <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
+
       margin: 0;
+
       height: 100vh;
-      background: radial-gradient(circle at top, #1e40af, #020617 55%);
+
+      background:
+      radial-gradient(circle at top,
+      #1e40af,
+      #020617 55%);
+
       color: white;
+
       font-family: Arial, sans-serif;
+
       display: flex;
+
       justify-content: center;
+
       align-items: center;
-      text-align: center;
+
+      overflow: hidden;
+
+    }
+
+    .background-glow {
+
+      position: absolute;
+
+      width: 700px;
+      height: 700px;
+
+      background:
+      rgba(59,130,246,0.15);
+
+      border-radius: 50%;
+
+      filter: blur(120px);
+
+      animation: pulse 6s infinite alternate;
+
+    }
+
+    @keyframes pulse {
+
+      from {
+        transform: scale(1);
+      }
+
+      to {
+        transform: scale(1.2);
+      }
+
     }
 
     .card {
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(148, 163, 184, 0.25);
+
+      position: relative;
+
+      z-index: 2;
+
+      background:
+      rgba(15, 23, 42, 0.85);
+
+      border:
+      1px solid rgba(148, 163, 184, 0.25);
+
       border-radius: 28px;
+
       padding: 50px;
-      max-width: 620px;
-      box-shadow: 0 0 60px rgba(59, 130, 246, 0.28);
+
+      max-width: 650px;
+
+      width: 90%;
+
+      text-align: center;
+
+      box-shadow:
+      0 0 60px rgba(59, 130, 246, 0.28);
+
       backdrop-filter: blur(12px);
+
     }
 
     .badge {
+
       display: inline-block;
+
       padding: 10px 16px;
+
       border-radius: 999px;
-      background: rgba(59, 130, 246, 0.15);
+
+      background:
+      rgba(59, 130, 246, 0.15);
+
       color: #93c5fd;
-      border: 1px solid rgba(147, 197, 253, 0.35);
+
+      border:
+      1px solid rgba(147, 197, 253, 0.35);
+
       margin-bottom: 25px;
+
       font-size: 14px;
+
       letter-spacing: 1px;
+
     }
 
     h1 {
-      font-size: 48px;
-      margin: 0 0 15px;
+
+      font-size: 52px;
+
+      margin-bottom: 15px;
+
     }
 
     p {
+
       color: #cbd5e1;
+
       font-size: 18px;
+
       line-height: 1.7;
+
       margin-bottom: 30px;
+
     }
 
     .loader {
+
       width: 100%;
+
       height: 10px;
+
       background: #1e293b;
+
       border-radius: 999px;
+
       overflow: hidden;
+
+      margin-top: 25px;
+
     }
 
     .bar {
+
       width: 45%;
+
       height: 100%;
-      background: linear-gradient(90deg, #2563eb, #38bdf8);
+
+      background:
+      linear-gradient(
+      90deg,
+      #2563eb,
+      #38bdf8);
+
       border-radius: 999px;
-      animation: loading 2s infinite alternate;
+
+      animation:
+      loading 2s infinite alternate;
+
     }
 
     @keyframes loading {
+
       from {
-        width: 25%;
+        width: 20%;
       }
+
       to {
         width: 85%;
       }
+
+    }
+
+    .visitas {
+
+      margin-top: 35px;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      gap: 12px;
+
+    }
+
+    .ojo {
+
+      font-size: 24px;
+
     }
 
     footer {
+
       margin-top: 28px;
+
       color: #64748b;
+
       font-size: 14px;
+
     }
+
   </style>
 </head>
 
 <body>
-  <main class="card">
-    <div class="badge">NICODEV.LAT</div>
 
-    <h1>Sitio en construcción 🚧</h1>
+  <div class="background-glow"></div>
+
+  <main class="card">
+
+    <div class="badge">
+      NICODEV.LAT
+    </div>
+
+    <h1>
+      Sitio en construcción 🚧
+    </h1>
 
     <p>
-      Estoy preparando mi portfolio personal sobre Linux, infraestructura,
-      servidores, cloud y sistemas.
+      Estoy desarrollando mi portfolio sobre
+      Linux, infraestructura, servidores,
+      cloud y sistemas.
     </p>
 
     <div class="loader">
       <div class="bar"></div>
     </div>
 
+    <div class="visitas">
+
+      <span class="ojo">
+        👁️
+      </span>
+
+      <img
+        src="https://hits.sh/nicodev.lat.svg?label=visitas&color=2563eb&labelColor=020617"
+        alt="contador de visitas"
+      />
+
+    </div>
+
     <footer>
       Future System Engineer • NicoDev
     </footer>
+
   </main>
+
 </body>
 </html>
