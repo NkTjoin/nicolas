@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>NicoDev | En construcción</title>
 
   <style>
     * {
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
@@ -19,15 +21,49 @@
         radial-gradient(circle at top left, rgba(37, 99, 235, 0.35), transparent 35%),
         radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.22), transparent 35%),
         #020617;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       padding: 24px;
+    }
+
+    nav {
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto 40px;
+      padding: 16px 22px;
+      border-radius: 22px;
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(14px);
+    }
+
+    .brand {
+      font-weight: bold;
+      color: #93c5fd;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
     }
 
     .container {
       width: 100%;
-      max-width: 760px;
+      max-width: 980px;
+      margin: 0 auto;
+      display: grid;
+      gap: 28px;
+    }
+
+    .card {
       background: rgba(15, 23, 42, 0.78);
       border: 1px solid rgba(148, 163, 184, 0.22);
       border-radius: 32px;
@@ -66,7 +102,7 @@
     }
 
     p {
-      max-width: 560px;
+      max-width: 640px;
       margin: 0 auto;
       color: #cbd5e1;
       font-size: 18px;
@@ -96,14 +132,72 @@
       font-size: 14px;
     }
 
+    .belgrano {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 30px;
+      align-items: center;
+      text-align: left;
+      background:
+        linear-gradient(135deg, rgba(56, 189, 248, 0.18), rgba(15, 23, 42, 0.86)),
+        rgba(15, 23, 42, 0.82);
+    }
+
+    .belgrano-logo {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 12px;
+      border-radius: 50%;
+      box-shadow: 0 0 35px rgba(56, 189, 248, 0.35);
+    }
+
+    .belgrano h2 {
+      font-size: 34px;
+      margin: 0 0 12px;
+      color: #e0f2fe;
+    }
+
+    .belgrano p {
+      margin: 0;
+      max-width: none;
+    }
+
+    .score {
+      margin-top: 22px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .score span {
+      padding: 10px 14px;
+      border-radius: 14px;
+      background: rgba(2, 6, 23, 0.55);
+      border: 1px solid rgba(125, 211, 252, 0.22);
+      color: #bae6fd;
+      font-size: 14px;
+    }
+
     footer {
-      margin-top: 36px;
+      text-align: center;
+      margin-top: 28px;
       color: #64748b;
       font-size: 14px;
     }
 
-    @media (max-width: 600px) {
-      .container {
+    @media (max-width: 720px) {
+      nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav a {
+        margin: 0 8px;
+      }
+
+      .card {
         padding: 36px 24px;
       }
 
@@ -114,36 +208,97 @@
       p {
         font-size: 16px;
       }
+
+      .belgrano {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .belgrano-logo {
+        margin: 0 auto;
+      }
+
+      .score {
+        justify-content: center;
+      }
     }
   </style>
 </head>
 
 <body>
+
+  <nav>
+    <div class="brand">NICODEV.LAT</div>
+
+    <div>
+      <a href="#inicio">Inicio</a>
+      <a href="#belgrano">Belgrano</a>
+      <a href="#stack">Stack</a>
+    </div>
+  </nav>
+
   <main class="container">
-    <div class="status">
-      <span class="dot"></span>
-      NICODEV.LAT
-    </div>
 
-    <h1>Sitio en construcción</h1>
+    <section class="card" id="inicio">
 
-    <p>
-      Estoy preparando mi portfolio personal sobre Linux, infraestructura,
-      servidores, cloud y sistemas.
-    </p>
+      <div class="status">
+        <span class="dot"></span>
+        PORTFOLIO EN DESARROLLO
+      </div>
 
-    <div class="line"></div>
+      <h1>Sitio en construcción</h1>
 
-    <div class="stack">
-      <span class="tag">Linux</span>
-      <span class="tag">Cloudflare</span>
-      <span class="tag">GitHub Pages</span>
-      <span class="tag">Infraestructura</span>
-    </div>
+      <p>
+        Estoy preparando mi portfolio personal sobre Linux,
+        infraestructura, servidores, cloud y sistemas.
+      </p>
+
+      <div class="line"></div>
+
+      <div class="stack" id="stack">
+        <span class="tag">Linux</span>
+        <span class="tag">Cloudflare</span>
+        <span class="tag">Infraestructura</span>
+        <span class="tag">Networking</span>
+      </div>
+
+    </section>
+
+    <section class="card belgrano" id="belgrano">
+
+      <img
+        class="belgrano-logo"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Escudo_del_Club_Atl%C3%A9tico_Belgrano.svg/512px-Escudo_del_Club_Atl%C3%A9tico_Belgrano.svg.png"
+        alt="Escudo de Belgrano"
+      />
+
+      <div>
+        <div class="status">
+          <span class="dot"></span>
+          ORGULLO CORDOBÉS
+        </div>
+
+        <h2>Belgrano campeón 🏆</h2>
+
+        <p>
+          El Pirata hizo historia: venció 3-2 a River en el Kempes
+          y se consagró campeón del Torneo Apertura 2026.
+        </p>
+
+        <div class="score">
+          <span>Belgrano 3 - 2 River</span>
+          <span>Kempes, Córdoba</span>
+          <span>Final histórica</span>
+        </div>
+      </div>
+
+    </section>
 
     <footer>
       Future System Engineer • NicoDev
     </footer>
+
   </main>
+
 </body>
 </html>
