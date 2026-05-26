@@ -6,9 +6,7 @@
   <title>NicoDev | Building</title>
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -16,25 +14,26 @@
       font-family: Arial, sans-serif;
       color: white;
       background:
-        radial-gradient(circle at top, rgba(251, 191, 36, 0.20), transparent 35%),
-        radial-gradient(circle at bottom right, rgba(37, 99, 235, 0.28), transparent 35%),
+        radial-gradient(circle at top, rgba(251,191,36,.22), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(37,99,235,.30), transparent 35%),
         #020617;
       display: flex;
-      align-items: center;
       justify-content: center;
-      padding: 24px;
+      align-items: center;
+      padding: 18px;
       overflow: hidden;
     }
 
     .card {
-      width: 100%;
-      max-width: 850px;
-      background: rgba(15, 23, 42, 0.86);
-      border: 1px solid rgba(251, 191, 36, 0.25);
-      border-radius: 34px;
-      padding: 42px;
+      width: min(940px, 100%);
+      max-height: 96vh;
+      overflow: hidden;
+      background: rgba(15,23,42,.88);
+      border: 1px solid rgba(251,191,36,.25);
+      border-radius: 32px;
+      padding: 28px;
       text-align: center;
-      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+      box-shadow: 0 30px 90px rgba(0,0,0,.45);
       backdrop-filter: blur(16px);
     }
 
@@ -42,52 +41,53 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 10px 16px;
+      padding: 9px 15px;
       border-radius: 999px;
-      background: rgba(251, 191, 36, 0.12);
-      border: 1px solid rgba(251, 191, 36, 0.35);
+      background: rgba(251,191,36,.12);
+      border: 1px solid rgba(251,191,36,.35);
       color: #fde68a;
       font-size: 14px;
-      letter-spacing: 1px;
-      margin-bottom: 22px;
+      margin-bottom: 14px;
     }
 
     .helmet {
-      font-size: 34px;
-      animation: bounce 1.4s infinite alternate;
+      font-size: 28px;
+      animation: bounce 1.2s infinite alternate;
     }
 
     h1 {
-      font-size: 54px;
-      margin: 0 0 14px;
+      font-size: clamp(38px, 7vw, 62px);
+      margin: 0 0 10px;
       line-height: 1;
     }
 
     p {
       color: #cbd5e1;
-      font-size: 18px;
-      line-height: 1.7;
-      margin: 0 auto 28px;
-      max-width: 620px;
+      font-size: clamp(15px, 2vw, 18px);
+      line-height: 1.6;
+      max-width: 650px;
+      margin: 0 auto 18px;
     }
 
-    .scene {
+    .game {
       position: relative;
-      height: 290px;
-      margin: 25px auto 30px;
-      max-width: 650px;
-      border-radius: 28px;
+      width: 100%;
+      height: min(45vh, 360px);
+      min-height: 270px;
+      margin: 18px auto;
+      border-radius: 26px;
       background:
-        linear-gradient(180deg, rgba(15,23,42,0.35), rgba(2,6,23,0.65));
-      border: 1px solid rgba(148, 163, 184, 0.15);
+        linear-gradient(180deg, rgba(15,23,42,.25), rgba(2,6,23,.75));
+      border: 1px solid rgba(148,163,184,.16);
       overflow: hidden;
+      cursor: crosshair;
     }
 
     .ground {
       position: absolute;
-      bottom: 35px;
-      left: 6%;
-      width: 88%;
+      bottom: 34px;
+      left: 5%;
+      width: 90%;
       height: 8px;
       border-radius: 999px;
       background: repeating-linear-gradient(
@@ -97,161 +97,115 @@
         #111827 14px,
         #111827 28px
       );
-      box-shadow: 0 0 18px rgba(251, 191, 36, 0.25);
-    }
-
-    .tower {
-      position: absolute;
-      bottom: 42px;
-      left: 130px;
-      width: 28px;
-      height: 190px;
-      border: 2px solid #fbbf24;
-      border-radius: 8px;
-      background: repeating-linear-gradient(
-        45deg,
-        transparent 0 12px,
-        rgba(251, 191, 36, 0.55) 12px 18px
-      );
-    }
-
-    .arm {
-      position: absolute;
-      left: 133px;
-      bottom: 218px;
-      width: 330px;
-      height: 18px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #fbbf24, #f97316);
-      transform-origin: left center;
-      animation: craneMove 3s ease-in-out infinite alternate;
-      box-shadow: 0 0 25px rgba(251, 191, 36, 0.35);
-    }
-
-    .cable {
-      position: absolute;
-      top: 18px;
-      right: 55px;
-      width: 3px;
-      height: 90px;
-      background: #fde68a;
-      animation: cableMove 2s ease-in-out infinite alternate;
-    }
-
-    .box {
-      position: absolute;
-      left: -26px;
-      bottom: -48px;
-      width: 58px;
-      height: 34px;
-      border-radius: 8px;
-      background: linear-gradient(135deg, #f97316, #fbbf24);
-      border: 1px solid rgba(255,255,255,0.35);
-      box-shadow: 0 0 22px rgba(251, 191, 36, 0.35);
     }
 
     .building {
       position: absolute;
-      right: 75px;
-      bottom: 43px;
+      right: 8%;
+      bottom: 42px;
       display: flex;
       align-items: flex-end;
-      gap: 9px;
+      gap: 8px;
     }
 
     .block {
-      width: 44px;
+      width: 42px;
       border-radius: 10px 10px 0 0;
-      background: rgba(30, 41, 59, 0.95);
-      border: 1px solid rgba(251, 191, 36, 0.25);
+      background: rgba(30,41,59,.96);
+      border: 1px solid rgba(251,191,36,.25);
     }
 
-    .block:nth-child(1) { height: 65px; }
-    .block:nth-child(2) { height: 105px; }
-    .block:nth-child(3) { height: 145px; }
+    .block:nth-child(1) { height: 70px; }
+    .block:nth-child(2) { height: 110px; }
+    .block:nth-child(3) { height: 150px; }
 
     .worker {
       position: absolute;
-      left: 65px;
-      bottom: 50px;
+      bottom: 48px;
+      left: 10%;
       font-size: 38px;
-      animation: walk 2.4s ease-in-out infinite alternate;
+      animation: walk 2.2s infinite alternate ease-in-out;
+    }
+
+    .falling {
+      position: absolute;
+      top: -45px;
+      font-size: 34px;
+      user-select: none;
+      animation: fall linear forwards;
+      filter: drop-shadow(0 0 10px rgba(251,191,36,.35));
+    }
+
+    @keyframes fall {
+      to { transform: translateY(430px) rotate(120deg); }
+    }
+
+    .hud {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+      align-items: center;
+      margin-top: 12px;
     }
 
     .progress-wrap {
-      margin-top: 8px;
       background: #111827;
       height: 14px;
       border-radius: 999px;
       overflow: hidden;
-      border: 1px solid rgba(251, 191, 36, 0.25);
+      border: 1px solid rgba(251,191,36,.25);
     }
 
     .progress {
       height: 100%;
-      width: 35%;
+      width: 20%;
       background: linear-gradient(90deg, #f97316, #fbbf24);
       border-radius: 999px;
-      transition: width 0.4s ease;
-      box-shadow: 0 0 18px rgba(251, 191, 36, 0.45);
+      transition: width .25s ease;
+      box-shadow: 0 0 18px rgba(251,191,36,.45);
     }
 
-    .info {
-      margin-top: 16px;
+    .score {
       color: #fde68a;
       font-family: Consolas, monospace;
       font-size: 15px;
+      white-space: nowrap;
+    }
+
+    .buttons {
+      margin-top: 16px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
     button {
-      margin-top: 24px;
       border: none;
       cursor: pointer;
-      padding: 14px 20px;
-      border-radius: 16px;
+      padding: 12px 17px;
+      border-radius: 15px;
       background: linear-gradient(135deg, #f97316, #fbbf24);
       color: #111827;
       font-weight: bold;
-      font-size: 15px;
-      transition: 0.2s;
+      transition: .2s;
     }
 
     button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(251, 191, 36, 0.25);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(251,191,36,.23);
     }
 
-    .tags {
-      margin-top: 26px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .tag {
-      padding: 10px 14px;
-      border-radius: 14px;
-      background: rgba(30, 41, 59, 0.8);
-      border: 1px solid rgba(251, 191, 36, 0.18);
-      color: #fde68a;
+    .tip {
+      margin-top: 10px;
+      color: #94a3b8;
       font-size: 14px;
     }
 
     footer {
-      margin-top: 28px;
+      margin-top: 14px;
       color: #64748b;
       font-size: 14px;
-    }
-
-    @keyframes craneMove {
-      from { transform: rotate(-5deg); }
-      to { transform: rotate(7deg); }
-    }
-
-    @keyframes cableMove {
-      from { height: 72px; }
-      to { height: 108px; }
     }
 
     @keyframes walk {
@@ -261,26 +215,17 @@
 
     @keyframes bounce {
       from { transform: translateY(0); }
-      to { transform: translateY(-8px); }
+      to { transform: translateY(-6px); }
     }
 
-    @media (max-width: 700px) {
-      .card {
-        padding: 30px 20px;
-      }
-
-      h1 {
-        font-size: 38px;
-      }
-
-      p {
-        font-size: 16px;
-      }
-
-      .scene {
-        transform: scale(0.82);
-        margin: -15px auto 5px;
-      }
+    @media (max-width: 650px) {
+      body { padding: 10px; }
+      .card { padding: 20px; border-radius: 24px; }
+      .game { min-height: 250px; height: 42vh; }
+      .building { right: 3%; transform: scale(.85); transform-origin: bottom right; }
+      .worker { left: 6%; }
+      .hud { grid-template-columns: 1fr; }
+      .score { font-size: 14px; }
     }
   </style>
 </head>
@@ -295,19 +240,12 @@
     <h1>Building...</h1>
 
     <p>
-      Este sitio está en construcción. Estoy preparando mi portfolio
-      sobre Linux, infraestructura, servidores, cloud y sistemas.
+      Sitio en construcción. Mientras preparo mi portfolio,
+      tocá los materiales que caen para avanzar la obra.
     </p>
 
-    <section class="scene">
+    <section class="game" id="game">
       <div class="worker">👷</div>
-      <div class="tower"></div>
-
-      <div class="arm">
-        <div class="cable">
-          <div class="box"></div>
-        </div>
-      </div>
 
       <div class="building">
         <div class="block"></div>
@@ -318,23 +256,23 @@
       <div class="ground"></div>
     </section>
 
-    <div class="progress-wrap">
-      <div class="progress" id="progress"></div>
+    <div class="hud">
+      <div class="progress-wrap">
+        <div class="progress" id="progress"></div>
+      </div>
+
+      <div class="score" id="score">
+        progreso: 20% | puntos: 0
+      </div>
     </div>
 
-    <div class="info" id="info">
-      progreso: 35% | estado: construyendo...
+    <div class="buttons">
+      <button onclick="spawnMaterial()">Soltar material 🚧</button>
+      <button onclick="resetGame()">Reiniciar obra</button>
     </div>
 
-    <button onclick="buildMore()">
-      Construir un poco más 🚧
-    </button>
-
-    <div class="tags">
-      <span class="tag">Linux</span>
-      <span class="tag">Cloudflare</span>
-      <span class="tag">Networking</span>
-      <span class="tag">Infrastructure</span>
+    <div class="tip">
+      Click en los ladrillos, cascos o herramientas antes de que caigan.
     </div>
 
     <footer>
@@ -343,24 +281,68 @@
   </main>
 
   <script>
-    let progress = 35;
+    const game = document.getElementById("game");
+    const progressBar = document.getElementById("progress");
+    const scoreText = document.getElementById("score");
 
-    function buildMore() {
-      progress += 10;
+    let score = 0;
+    let progress = 20;
 
-      if (progress > 100) {
-        progress = 35;
-      }
+    const items = ["🧱", "🔧", "⚙️", "👷‍♂️", "🚧"];
 
-      document.getElementById("progress").style.width = progress + "%";
-
-      const status = progress === 100
-        ? "deploy listo, pero sigo aprendiendo"
-        : "construyendo...";
-
-      document.getElementById("info").textContent =
-        "progreso: " + progress + "% | estado: " + status;
+    function updateHud() {
+      progressBar.style.width = progress + "%";
+      scoreText.textContent = "progreso: " + progress + "% | puntos: " + score;
     }
+
+    function spawnMaterial() {
+      const item = document.createElement("div");
+      item.className = "falling";
+      item.textContent = items[Math.floor(Math.random() * items.length)];
+
+      const maxX = game.clientWidth - 50;
+      item.style.left = Math.random() * maxX + "px";
+
+      const duration = 2.4 + Math.random() * 1.5;
+      item.style.animationDuration = duration + "s";
+
+      item.onclick = function () {
+        score += 1;
+        progress += 5;
+
+        if (progress > 100) {
+          progress = 100;
+        }
+
+        item.remove();
+        updateHud();
+
+        if (progress === 100) {
+          scoreText.textContent = "obra completa 🎉 | puntos: " + score;
+        }
+      };
+
+      game.appendChild(item);
+
+      setTimeout(() => {
+        item.remove();
+      }, duration * 1000);
+    }
+
+    function resetGame() {
+      score = 0;
+      progress = 20;
+      document.querySelectorAll(".falling").forEach(el => el.remove());
+      updateHud();
+    }
+
+    setInterval(() => {
+      if (progress < 100) {
+        spawnMaterial();
+      }
+    }, 1200);
+
+    updateHud();
   </script>
 </body>
 </html>
