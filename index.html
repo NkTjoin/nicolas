@@ -2,140 +2,107 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mirko 💀</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NicoDev | En construcción</title>
 
   <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family: Arial, Helvetica, sans-serif;
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle at top, #1e40af, #020617 55%);
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
 
-    body{
-      height:100vh;
-      overflow:hidden;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      background:black;
-      color:white;
-      position:relative;
+    .card {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      border-radius: 28px;
+      padding: 50px;
+      max-width: 620px;
+      box-shadow: 0 0 60px rgba(59, 130, 246, 0.28);
+      backdrop-filter: blur(12px);
     }
 
-    .bg{
-      position:absolute;
-      width:200%;
-      height:200%;
-      background:
-        radial-gradient(circle at center, #ff00c8 0%, transparent 20%),
-        radial-gradient(circle at top left, #00ffe1 0%, transparent 25%),
-        radial-gradient(circle at bottom right, #ffea00 0%, transparent 25%);
-      animation: moveBg 8s linear infinite;
-      filter: blur(80px);
-      opacity:0.8;
+    .badge {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(59, 130, 246, 0.15);
+      color: #93c5fd;
+      border: 1px solid rgba(147, 197, 253, 0.35);
+      margin-bottom: 25px;
+      font-size: 14px;
+      letter-spacing: 1px;
     }
 
-    @keyframes moveBg{
-      0%{ transform:rotate(0deg) scale(1); }
-      50%{ transform:rotate(180deg) scale(1.2); }
-      100%{ transform:rotate(360deg) scale(1); }
+    h1 {
+      font-size: 48px;
+      margin: 0 0 15px;
     }
 
-    h1{
-      font-size: clamp(3rem, 10vw, 8rem);
-      z-index:2;
-      text-transform:uppercase;
-      text-align:center;
-      animation: shake 0.2s infinite;
-      text-shadow:
-        0 0 10px #fff,
-        0 0 20px #ff00c8,
-        0 0 40px #ff00c8,
-        0 0 80px #ff00c8;
+    p {
+      color: #cbd5e1;
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 30px;
     }
 
-    .emoji{
-      position:absolute;
-      font-size:2rem;
-      animation: fall linear infinite;
-      opacity:0.8;
+    .loader {
+      width: 100%;
+      height: 10px;
+      background: #1e293b;
+      border-radius: 999px;
+      overflow: hidden;
     }
 
-    @keyframes shake{
-      0%{ transform:translate(2px,2px); }
-      25%{ transform:translate(-2px,2px); }
-      50%{ transform:translate(2px,-2px); }
-      75%{ transform:translate(-2px,-2px); }
-      100%{ transform:translate(2px,2px); }
+    .bar {
+      width: 45%;
+      height: 100%;
+      background: linear-gradient(90deg, #2563eb, #38bdf8);
+      border-radius: 999px;
+      animation: loading 2s infinite alternate;
     }
 
-    @keyframes fall{
-      from{
-        transform:translateY(-120vh) rotate(0deg);
+    @keyframes loading {
+      from {
+        width: 25%;
       }
-      to{
-        transform:translateY(120vh) rotate(720deg);
+      to {
+        width: 85%;
       }
     }
 
-    .sub{
-      position:absolute;
-      bottom:40px;
-      font-size:1.2rem;
-      opacity:0.8;
-      z-index:2;
-      animation: pulse 1s infinite;
-    }
-
-    @keyframes pulse{
-      0%,100%{ transform:scale(1); }
-      50%{ transform:scale(1.1); }
+    footer {
+      margin-top: 28px;
+      color: #64748b;
+      font-size: 14px;
     }
   </style>
 </head>
+
 <body>
+  <main class="card">
+    <div class="badge">NICODEV.LAT</div>
 
-  <div class="bg"></div>
+    <h1>Sitio en construcción 🚧</h1>
 
-  <h1 id="texto">MIRKO GAY 💀</h1>
+    <p>
+      Estoy preparando mi portfolio personal sobre Linux, infraestructura,
+      servidores, cloud y sistemas.
+    </p>
 
-  <div class="sub">
-    certificado oficialmente por internet
-  </div>
+    <div class="loader">
+      <div class="bar"></div>
+    </div>
 
-  <script>
-    const emojis = ["💀","🤨","🗿","🔥","💅","😭"];
-
-    for(let i = 0; i < 50; i++){
-      const e = document.createElement("div");
-      e.classList.add("emoji");
-      e.innerText = emojis[Math.floor(Math.random()*emojis.length)];
-
-      e.style.left = Math.random() * 100 + "vw";
-      e.style.animationDuration = (Math.random()*5 + 3) + "s";
-      e.style.fontSize = (Math.random()*40 + 20) + "px";
-
-      document.body.appendChild(e);
-    }
-
-    // texto loco que cambia
-    const frases = [
-      "MIRKO GAY 💀",
-      "100% REAL NO FAKE 🔥",
-      "CERTIFICADO 🗿",
-      "MIRKO.EXE 😭",
-      "TOP 1 FAN DE LOS PIBES 💅"
-    ];
-
-    let i = 0;
-
-    setInterval(() => {
-      i = (i + 1) % frases.length;
-      document.getElementById("texto").innerText = frases[i];
-    }, 2000);
-  </script>
-
+    <footer>
+      Future System Engineer • NicoDev
+    </footer>
+  </main>
 </body>
 </html>
